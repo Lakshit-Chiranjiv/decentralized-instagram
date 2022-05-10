@@ -65,4 +65,13 @@ contract Decentralized_Instagram{
         tempPost.likes--;
         Posts[_postId] = tempPost;
     }
+
+    function registerUser(string memory _username,string memory _avatarHash,string memory _userBio) public {
+        require(bytes(_username).length > 0,"UserName not provided");
+        require(UserNames[_username] == 0,"UserName already exists");
+        UserNames[_username] = 1;
+        userCount++;
+        Users[userCount] = User(userCount,payable(msg.sender),_username,_avatarHash,_userBio,0,0,new uint[](0));
+        UserAddresses[msg.sender] = Users[userCount];
+    }
 }
