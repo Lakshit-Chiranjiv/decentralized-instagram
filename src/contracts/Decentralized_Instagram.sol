@@ -25,4 +25,10 @@ contract Decentralized_Instagram{
         uint tipAmount;
         address payable postUser;
     }
+
+    mapping(uint => User) public Users;
+    mapping(address => User) public UserAddresses;
+    mapping(string => uint) public UserNames;
+    mapping(uint => Post) public Posts;
+    
 }
