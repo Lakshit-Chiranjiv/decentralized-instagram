@@ -40,4 +40,15 @@ contract Decentralized_Instagram{
         UserAddresses[msg.sender].postHashesIds.push(postCount);
     }
 
+    function tipPost(uint _postId) public payable{
+        require(_postId > 0 && _postId <= postCount,"Post Id not in range");
+        Post memory tempPost = Posts[_postId];
+        address payable tipReceiver = payable(tempPost.postUser);
+        uint tipTransferAmount = 1 ether;
+        tipReceiver.transfer(tipTransferAmount);
+        tempPost.tipAmount += tipTransferAmount;
+        Posts[_postId] = tempPost;
+        UserAddresses[tipReceiver].tipsReceived += tipTransferAmount;
+        UserAddresses[msg.sender].tipsGiven += tipTransferAmount;
+    }
 }
