@@ -58,4 +58,11 @@ contract Decentralized_Instagram{
         tempPost.likes++;
         Posts[_postId] = tempPost;
     }
+
+    function dislikePost(uint  _postId) public{
+        require(_postId > 0 && _postId <= postCount,"Post Id not in range");
+        Post memory tempPost = Posts[_postId];
+        tempPost.likes--;
+        Posts[_postId] = tempPost;
+    }
 }
