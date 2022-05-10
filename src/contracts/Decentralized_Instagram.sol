@@ -51,4 +51,11 @@ contract Decentralized_Instagram{
         UserAddresses[tipReceiver].tipsReceived += tipTransferAmount;
         UserAddresses[msg.sender].tipsGiven += tipTransferAmount;
     }
+
+    function likePost(uint  _postId) public{
+        require(_postId > 0 && _postId <= postCount,"Post Id not in range");
+        Post memory tempPost = Posts[_postId];
+        tempPost.likes++;
+        Posts[_postId] = tempPost;
+    }
 }
