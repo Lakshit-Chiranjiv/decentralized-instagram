@@ -16,4 +16,13 @@ contract Decentralized_Instagram{
         uint tipsGiven;
         uint[] postHashesIds;
     }
+
+    struct Post{
+        uint postId;
+        string postHash;
+        string caption;
+        uint likes;
+        uint tipAmount;
+        address payable postUser;
+    }
 }
