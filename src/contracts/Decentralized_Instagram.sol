@@ -42,7 +42,12 @@ contract Decentralized_Instagram{
 
     receive () external payable{}
 
-    function tipPost(uint _postId) public payable{
+    function tipPost(uint _postId) external payable{
+        require(msg.sender.balance >= 1 ether,"You don't have enough balance to tip");
+        tipPostConfigurations(_postId);
+    }
+
+    function tipPostConfigurations(uint _postId) public payable{
         require(_postId > 0 && _postId <= postCount,"Post Id not in range");
         Post memory tempPost = Posts[_postId];
         address payable tipReceiver = payable(tempPost.postUser);
