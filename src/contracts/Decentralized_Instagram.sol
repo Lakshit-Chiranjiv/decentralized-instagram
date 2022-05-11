@@ -40,6 +40,8 @@ contract Decentralized_Instagram{
         UserAddresses[msg.sender].postHashesIds.push(postCount);
     }
 
+    receive () external payable{}
+
     function tipPost(uint _postId) public payable{
         require(_postId > 0 && _postId <= postCount,"Post Id not in range");
         Post memory tempPost = Posts[_postId];
