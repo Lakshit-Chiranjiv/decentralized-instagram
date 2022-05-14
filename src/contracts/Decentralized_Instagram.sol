@@ -51,7 +51,7 @@ contract Decentralized_Instagram{
         require(_postId > 0 && _postId <= postCount,"Post Id not in range");
         Post memory tempPost = Posts[_postId];
         address payable tipReceiver = payable(tempPost.postUser);
-        uint tipTransferAmount = 1 ether;
+        uint tipTransferAmount = (1 ether);
         tipReceiver.transfer(tipTransferAmount);
         tempPost.tipAmount += tipTransferAmount;
         Posts[_postId] = tempPost;
