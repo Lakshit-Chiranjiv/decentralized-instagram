@@ -1,6 +1,6 @@
 import { Button, Col, Image, Layout, Row, Typography } from 'antd'
 import React from 'react'
-import NameLogo from './../../assets/NameLogo.png';
+import NameLogo from './../../assets/NameLogorbg.png';
 
 const { Content } = Layout;
 const { Title } = Typography;
