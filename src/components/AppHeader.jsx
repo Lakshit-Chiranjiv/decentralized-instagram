@@ -9,7 +9,7 @@ const AppHeader = () => {
   return (
     <Header style={{ backgroundColor: red[2],height: 'auto', padding: 30 }}>
         <Row align='middle' justify='center'>
-        <Title style={{ color: 'white' }}>Decentralized Instagram</Title>
+          <Title style={{ color: 'white' }}>Decentralized Instagram</Title>
         </Row>
     </Header>
   )
