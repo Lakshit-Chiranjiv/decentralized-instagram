@@ -7,8 +7,7 @@ const { Title } = Typography;
 const NonLoginUI = () => {
   return (
     <Layout>
-        <Content style={{ backgroundColor: 'white' }}>
-
+        <Content>
             <Row style={{ height: '66vh' }} justify='center' align='middle'>
               <Col span={12}>
                 <Title>Welcome To</Title>
