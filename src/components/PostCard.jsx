@@ -23,7 +23,7 @@ const PostCard = ({data: {imgUrl,likes,user,caption,tips}}) => (
             // ]}
         >
             <Meta
-            avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+            avatar={<Avatar src="https://joeschmoe.io/api/v1/random" style={{ cursor: 'pointer', border: '1px solid black' }} onClick={()=>console.log("avatar click")} />}
             title={user}
             description={caption}
             />
