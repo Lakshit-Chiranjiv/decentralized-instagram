@@ -86,6 +86,9 @@ const PostPage = () => {
         onChange={e => setCaption(e.target.value)}
       />
       <Button type="primary" block loading={false} style={{ width: '90%',height: '40px',margin: '20px auto' }} onClick={handleUploadClick}>Upload Post</Button>
+      <Button type="link" block>
+        &lt;- Go Back to Home
+      </Button>
     </div>
   );
 };
