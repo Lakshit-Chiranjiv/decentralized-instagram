@@ -12,7 +12,7 @@ const NonLoginUI = () => {
               <Col span={12}>
                 <Title>Welcome To</Title>
                 <Image src={NameLogo}/> <br />
-                <Button type="primary" block loading={false}>Connect to Metamask</Button>
+                <Button type="primary" block loading={false} style={{ width: '70%',height: '40px',margin: '20px auto' }}>Connect to Metamask</Button>
               </Col>
             </Row>
         </Content>
