@@ -5,10 +5,6 @@ import React, { useState } from 'react';
 
 const { TextArea } = Input;
 
-const onChange = (e) => {
-  console.log('Change:', e.target.value);
-};
-
 const getBase64 = (file) =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -24,6 +20,7 @@ const PostPage = () => {
   const [previewImage, setPreviewImage] = useState('');
   const [previewTitle, setPreviewTitle] = useState('');
   const [fileList, setFileList] = useState([]);
+  const [caption,setCaption] = useState('');
 
   const handleCancel = () => setPreviewVisible(false);
 
@@ -38,6 +35,11 @@ const PostPage = () => {
   };
 
   const handleChange = ({ fileList: newFileList }) => setFileList(newFileList);
+
+  const handleUploadClick = () => {
+    console.log(fileList[0]);
+    console.log(caption);
+  }
 
   const uploadButton = (
     <div>
@@ -81,9 +83,9 @@ const PostPage = () => {
           margin: '10px auto'
         }}
         placeholder="Enter Post Caption"
-        onChange={onChange}
+        onChange={e => setCaption(e.target.value)}
       />
-      <Button type="primary" block loading={false} style={{ width: '90%',height: '40px',margin: '20px auto' }}>Upload Post</Button>
+      <Button type="primary" block loading={false} style={{ width: '90%',height: '40px',margin: '20px auto' }} onClick={handleUploadClick}>Upload Post</Button>
     </div>
   );
 };
